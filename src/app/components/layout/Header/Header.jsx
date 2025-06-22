@@ -11,6 +11,7 @@ const Header = () => {
         <div className="flex gap-6">
           <Button variant="outline">Стать продавцом</Button>
           <Button variant="primary">Войти</Button>
+          
         </div>
       </div>
     </header>
