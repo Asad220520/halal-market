@@ -1,9 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-
-// пока пустые слайсы, добавим по мере надобности
+import authReducer from "../features/auth/autSlice";
 const store = configureStore({
   reducer: {
-    // auth: authReducer,
+    auth: authReducer,
     // cart: cartReducer,
     // и т.д.
   },
