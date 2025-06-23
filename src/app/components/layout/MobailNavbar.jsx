@@ -11,13 +11,13 @@ const MobileNavbar = () => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-md flex justify-around items-center h-16 md:hidden z-50">
+    <nav className="fixed bottom-0 left-0 right-0 bg-primary  border-t border-gray-200 shadow-md text-white flex justify-around items-center h-16 md:hidden z-50">
       {navItems.map((item) => (
         <Link
           key={item.to}
           to={item.to}
           className={`flex flex-col items-center text-xs ${
-            pathname === item.to ? "text-primary" : "text-gray-500"
+            pathname === item.to ? "text-primary" : "text-white"
           }`}
         >
           {item.icon}
