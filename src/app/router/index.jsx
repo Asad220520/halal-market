@@ -1,66 +1,111 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// Страницы
+// Layouts
+import MainLayout from "../layouts/MainLayout";
+import AuthLayout from "../layouts/AuthLayout";
+import SellerLayout from "../layouts/SellerLayout";
+import AdminLayout from "../layouts/AdminLayout";
+
+// Public Pages
 import Home from "../pages/Home";
-import Profile from "../pages/Profile";
+import ProductDetail from "../pages/ProductDetail";
+import CategoryPage from "../pages/CategoryPage";
 import NotFound from "../pages/NotFound";
 import LoginPage from "../features/auth/LoginPage";
 import RegisterPage from "../features/auth/RegisterPage";
-import StorePage from "../pages/StorePage";
+
+// Private Pages (Client)
+import ProfileHome from "../pages/profile/ProfileHome";
+import Orders from "../pages/profile/Orders";
+import Wishlist from "../pages/profile/Wishlist";
+import EditProfile from "../pages/profile/EditProfile";
+
+// Seller Pages
+import SellerDashboard from "../pages/seller/SellerDashboard";
+import Products from "../pages/seller/Products";
+import AddProduct from "../pages/seller/AddProduct";
+import Delivery from "../pages/seller/Dellivery";
+import Reviews from "../pages/seller/Reviews";
+import Questions from "../pages/seller/Questions";
+import SellerAnalytics from "../pages/seller/Analytics";
+import Offer from "../pages/seller/Offer";
+import SellerSettings from "../pages/seller/Settings";
+
+// Admin Pages
 import AdminDashboard from "../pages/admin/AdminDashboard";
+import Vendors from "../pages/admin/Vendors";
+import AdminProducts from "../pages/admin/Products";
+import AdminAnalytics from "../pages/admin/Analytics";
+import AdminQuestions from "../pages/admin/Questions";
+import AdminOffer from "../pages/admin/Offer";
+import AdminSettings from "../pages/admin/Settings";
+import AdminProfile from "../pages/admin/Profile";
 
-// Layout'ы
-import MainLayout from "../layouts/MainLayout";
-import AuthLayout from "../layouts/AuthLayout";
-import StoreLayout from "../layouts/StoreLayout";
-import AdminLayout from "../layouts/AdminLayout";
-
-// Защита маршрутов
+// Guards
 import PrivateRoute from "./PrivateRoute";
-import AdminRoute from "./AdminRoute"; // если есть отдельная проверка прав администратора
+import AdminRoute from "./AdminRoute";
+import SellerRoute from "./SellerRoute";
+import TestLogin from "../pages/TestLogin";
 
 export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Основной Layout */}
+        {/* Public */}
         <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/profile"
-            element={
-              <PrivateRoute>
-                <Profile />
-              </PrivateRoute>
-            }
-          />
+          <Route index element={<Home />} />
+          <Route path="product/:id" element={<ProductDetail />} />
+          <Route path="category/:slug" element={<CategoryPage />} />
         </Route>
 
-        {/* Auth layout */}
+        {/* Auth */}
         <Route element={<AuthLayout />}>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
         </Route>
 
-        {/* Магазин */}
-        <Route element={<StoreLayout />}>
-          <Route path="/store" element={<StorePage />} />
+        {/* Client profile */}
+        <Route element={<PrivateRoute />}>
+          <Route element={<MainLayout />}>
+            <Route path="profile" element={<ProfileHome />} />
+            <Route path="profile/orders" element={<Orders />} />
+            <Route path="profile/wishlist" element={<Wishlist />} />
+            <Route path="profile/edit" element={<EditProfile />} />
+          </Route>
         </Route>
 
-        {/* Админка */}
-        <Route element={<AdminLayout />}>
-          <Route
-            path="/admin"
-            element={
-              <AdminRoute>
-                <AdminDashboard />
-              </AdminRoute>
-            }
-          />
+        {/* Seller */}
+        <Route element={<SellerRoute />}>
+          <Route element={<SellerLayout />}>
+            <Route path="seller" element={<SellerDashboard />} />
+            <Route path="seller/products" element={<Products />} />
+            <Route path="seller/products/add" element={<AddProduct />} />
+            <Route path="seller/delivery" element={<Delivery />} />
+            <Route path="seller/reviews" element={<Reviews />} />
+            <Route path="seller/questions" element={<Questions />} />
+            <Route path="seller/analytics" element={<SellerAnalytics />} />
+            <Route path="seller/offer" element={<Offer />} />
+            <Route path="seller/settings" element={<SellerSettings />} />
+          </Route>
+        </Route>
+
+        {/* Admin */}
+        <Route element={<AdminRoute />}>
+          <Route element={<AdminLayout />}>
+            <Route index element={<AdminDashboard />} />
+            <Route path="vendors" element={<Vendors />} />
+            <Route path="products" element={<AdminProducts />} />
+            <Route path="analytics" element={<AdminAnalytics />} />
+            <Route path="questions" element={<AdminQuestions />} />
+            <Route path="offer" element={<AdminOffer />} />
+            <Route path="settings" element={<AdminSettings />} />
+            <Route path="profile" element={<AdminProfile />} />
+          </Route>
         </Route>
 
         {/* 404 */}
         <Route path="*" element={<NotFound />} />
+        <Route path="/test-login" element={<TestLogin />} />
       </Routes>
     </BrowserRouter>
   );
