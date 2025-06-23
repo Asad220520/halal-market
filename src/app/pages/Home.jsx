@@ -5,23 +5,19 @@ const Home = () => {
   return (
     <div className="space-y-4 p-6">
       home
-      {/* <Button>По умолчанию</Button>
-
+      <Button>По умолчанию</Button>
       <Button variant="primary">Primary</Button>
-
       <Button variant="secondary">Secondary</Button>
-
-      <Button variant="outline">Outline</Button>
-
+      <Button icon={<ShoppingCart />} iconPosition="vniz" variant="outline">
+        Outline
+      </Button>
       <Button icon={<ShoppingCart />} iconPosition="left">
         Купить
       </Button>
-
-      <Button icon={<ShoppingCart />} iconPosition="right" fullWidth>
+      <Button icon={<ShoppingCart />} iconPosition="right">
         В корзину
       </Button>
-
-      <Button loading>Загрузка...</Button> */}
+      <Button loading>Загрузка...</Button>
     </div>
   );
 };
