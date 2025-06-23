@@ -13,6 +13,8 @@ import CategoryPage from "../pages/CategoryPage";
 import NotFound from "../pages/NotFound";
 import LoginPage from "../features/auth/LoginPage";
 import RegisterPage from "../features/auth/RegisterPage";
+import ForgatPassword from "../features/auth/ForgotPassword";
+
 
 // Private Pages (Client)
 import ProfileHome from "../pages/profile/ProfileHome";
@@ -46,6 +48,7 @@ import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import SellerRoute from "./SellerRoute";
 import TestLogin from "../pages/TestLogin";
+import ResetPosswordConfirm from "../features/auth/ResetPosswordConfirm";
 
 export default function Router() {
   return (
@@ -62,6 +65,8 @@ export default function Router() {
         <Route element={<AuthLayout />}>
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
+          <Route path="forgot-password" element={<ForgatPassword />} />
+          <Route path="reset-password-confirm" element={<ResetPosswordConfirm />} />
         </Route>
 
         {/* Client profile */}

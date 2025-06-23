@@ -1,4 +1,5 @@
 import Button from "@components/ui/Button/Button";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -8,7 +9,9 @@ const Header = () => {
 
         <div className="flex gap-6">
           <Button variant="outline">Стать продавцом</Button>
-          <Button variant="primary">Войти</Button>
+          <Link to={"/login"}>
+            <Button variant="primary">Войти</Button>
+          </Link>
         </div>
       </div>
     </header>
