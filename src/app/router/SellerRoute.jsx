@@ -1,12 +1,11 @@
-import { Navigate } from "react-router-dom";
-import { useAuth } from "../hooks/useAuth";
+import { Navigate, Outlet } from "react-router-dom";
 
-export default function SellerRoute({ children }) {
-  const { isAuthenticated, user } = useAuth();
+export default function SellerRoute() {
+  const user = JSON.parse(localStorage.getItem("user"));
 
-  if (!isAuthenticated || user.role !== "seller") {
-    return <Navigate to="/" replace />;
+  if (!user || user.role !== "seller") {
+    return <Navigate to="/login" replace />;
   }
 
-  return children;
+  return <Outlet />;
 }

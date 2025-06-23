@@ -67,7 +67,7 @@ export default function Router() {
         {/* Client profile */}
         <Route element={<PrivateRoute />}>
           <Route element={<MainLayout />}>
-            <Route path="profile" element={<ProfileHome />} />
+            <Route path="/profile" element={<ProfileHome />} />
             <Route path="profile/orders" element={<Orders />} />
             <Route path="profile/wishlist" element={<Wishlist />} />
             <Route path="profile/edit" element={<EditProfile />} />
@@ -77,7 +77,7 @@ export default function Router() {
         {/* Seller */}
         <Route element={<SellerRoute />}>
           <Route element={<SellerLayout />}>
-            <Route path="seller" element={<SellerDashboard />} />
+            <Route path="/seller" element={<SellerDashboard />} />
             <Route path="seller/products" element={<Products />} />
             <Route path="seller/products/add" element={<AddProduct />} />
             <Route path="seller/delivery" element={<Delivery />} />
@@ -92,14 +92,14 @@ export default function Router() {
         {/* Admin */}
         <Route element={<AdminRoute />}>
           <Route element={<AdminLayout />}>
-            <Route index element={<AdminDashboard />} />
-            <Route path="vendors" element={<Vendors />} />
-            <Route path="products" element={<AdminProducts />} />
-            <Route path="analytics" element={<AdminAnalytics />} />
-            <Route path="questions" element={<AdminQuestions />} />
-            <Route path="offer" element={<AdminOffer />} />
-            <Route path="settings" element={<AdminSettings />} />
-            <Route path="profile" element={<AdminProfile />} />
+            <Route path="admin" element={<AdminDashboard />} />
+            <Route path="admin/vendors" element={<Vendors />} />
+            <Route path="admin/products" element={<AdminProducts />} />
+            <Route path="admin/analytics" element={<AdminAnalytics />} />
+            <Route path="admin/questions" element={<AdminQuestions />} />
+            <Route path="admin/offer" element={<AdminOffer />} />
+            <Route path="admin/settings" element={<AdminSettings />} />
+            <Route path="admin/profile" element={<AdminProfile />} />
           </Route>
         </Route>
 
