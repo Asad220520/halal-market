@@ -17,6 +17,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      halal-market:
+        specifier: 'link:'
+        version: 'link:'
       lucide-react:
         specifier: ^0.522.0
         version: 0.522.0(react@19.1.0)
