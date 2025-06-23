@@ -1,12 +1,13 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
 export default function AdminRoute({ children }) {
-  const { isAuthenticated, user } = useAuth();
+  // const { isAuthenticated, user } = useAuth();
+  const user = JSON.parse(localStorage.getItem("user"));
 
-  if (!isAuthenticated || user.role !== "admin") {
+  if (!user || user.role !== "admin") {
     return <Navigate to="/" replace />;
   }
 
-  return children;
+  return <Outlet />;
 }

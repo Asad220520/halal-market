@@ -10,7 +10,11 @@ export default function TestLogin() {
       role,
     };
     localStorage.setItem("user", JSON.stringify(user));
-    navigate("/"); // или в профиль, если хочешь: navigate("/profile")
+
+    // Автоматический переход в зависимости от роли
+    if (role === "seller") navigate("/seller");
+    else if (role === "admin") navigate("/admin");
+    else navigate("/profile");
   };
 
   return (
