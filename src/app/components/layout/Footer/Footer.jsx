@@ -3,8 +3,8 @@ import { FaYoutube, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 're
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0A8791] text-white py-10 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-4 md:grid-cols-2 gap-10">
+    <footer className="bg-primary text-white py-10 px-6">
+      <div className="container max-w-7xl mx-auto grid grid-row-4 sm:grid-cols-2 gap-10">
         {/* Column One */}
         <div>
           <h3 className="font-semibold text-lg mb-3">Column One</h3>
