@@ -12,7 +12,9 @@ const Home = () => {
       <Product />
       {/* <Button>По умолчанию</Button>
 
->>>>>>> mainPage:src/app/pages/Home/Home.jsx
+    <div className="space-y-4 p-6">
+      home
+      <Button>По умолчанию</Button>
       <Button variant="primary">Primary</Button>
       <Button variant="secondary">Secondary</Button>
       <Button icon={<ShoppingCart />} iconPosition="vniz" variant="outline">
