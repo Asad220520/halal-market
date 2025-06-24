@@ -35,7 +35,7 @@ import SellerSettings from "../pages/seller/Settings";
 
 // Admin Pages
 import AdminDashboard from "../pages/admin/AdminDashboard";
-import Vendors from "../pages/admin/Vendors";
+import AdminVendors from "../pages/admin/vendors/AdminVendors";
 import AdminProducts from "../pages/admin/Products";
 import AdminAnalytics from "../pages/admin/Analytics";
 import AdminQuestions from "../pages/admin/Questions";
@@ -98,7 +98,7 @@ export default function Router() {
         <Route element={<AdminRoute />}>
           <Route element={<AdminLayout />}>
             <Route path="admin" element={<AdminDashboard />} />
-            <Route path="admin/vendors" element={<Vendors />} />
+            <Route path="admin/vendors" element={<AdminVendors />} />
             <Route path="admin/products" element={<AdminProducts />} />
             <Route path="admin/analytics" element={<AdminAnalytics />} />
             <Route path="admin/questions" element={<AdminQuestions />} />
