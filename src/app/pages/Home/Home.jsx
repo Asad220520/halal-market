@@ -6,6 +6,12 @@ import Product from "./Product";
 
 const Home = () => {
   return (
+    <>
+      <Promotion />
+      <Categories />
+      <Product />
+      {/* <Button>По умолчанию</Button>
+
     <div className="space-y-4 p-6">
       home
       <Button>По умолчанию</Button>
@@ -21,7 +27,8 @@ const Home = () => {
         В корзину
       </Button>
       <Button loading>Загрузка...</Button>
-    </div>
+   */}
+    </>
   );
 };
 
