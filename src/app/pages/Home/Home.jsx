@@ -1,10 +1,15 @@
 import { ShoppingCart } from "lucide-react";
 import Button from "@components/ui/Button";
+import Promotion from "./Promotion";
+import Categories from "./Categories";
+import Product from "./Product";
 
 const Home = () => {
   return (
-    <div className="space-y-4 p-6">
-      home
+    <>
+    <Promotion/>
+    <Categories/>
+    <Product/>
       {/* <Button>По умолчанию</Button>
 
       <Button variant="primary">Primary</Button>
@@ -22,7 +27,7 @@ const Home = () => {
       </Button>
 
       <Button loading>Загрузка...</Button> */}
-    </div>
+    </>
   );
 };
 
