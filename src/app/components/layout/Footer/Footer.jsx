@@ -4,7 +4,7 @@ import { FaYoutube, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 're
 const Footer = () => {
   return (
     <footer className="bg-primary text-white py-10 px-6">
-      <div className="container max-w-7xl mx-auto grid grid-row-4 sm:grid-cols-2 gap-10">
+      <div className="container max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-10">
         {/* Column One */}
         <div>
           <h3 className="font-semibold text-lg mb-3">Column One</h3>
@@ -41,7 +41,7 @@ const Footer = () => {
         {/* Column Four */}
         <div>
           <h3 className="font-semibold text-lg mb-3">Column Four</h3>
-          <div className="flex gap-3 mb-4">
+          <div className="flex gap-3 mb-4 grid grid-cols-2 ">
             <img
               src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
               alt="App Store"
