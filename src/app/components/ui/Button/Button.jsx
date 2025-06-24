@@ -20,8 +20,9 @@ export default function Button({
       "bg-[#0A8791] cursor-pointer text-white hover:scale-105 duration-200  transition-transform ring-0 ring-offset-1",
     secondary:
       "bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-400",
-    outline:
-      " border-gray-300 text-white focus:ring-gray-400",
+    gradient:
+      "bg-gradient-to-r from-[#0A8791] to-[#00C9D1] text-white text-[10px] sm:text-[18px] ",
+    outline: " border-gray-300 text-white focus:ring-gray-400",
   };
 
   return (
@@ -29,7 +30,7 @@ export default function Button({
       className={cn(
         baseStyles,
         variants[variant],
-        fullWidth ? "w-full" : "px-4 py-2",
+        fullWidth ? "w-full h-[25px] sm:h-[58px]" : "px-4 py-2",
         className
       )}
       disabled={disabled || loading}
