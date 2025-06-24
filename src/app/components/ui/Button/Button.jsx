@@ -16,13 +16,12 @@ export default function Button({
     "inline-flex items-center justify-center rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
 
   const variants = {
-    primary: "bg-[#0A8791] cursor-pointer text-white hover:bg-blue-700 focus:ring-blue-500",
+    primary: "bg-[#0A8791] cursor-pointer text-white  focus:ring-blue-500",
     secondary:
       "bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-400",
     gradient:
       "bg-gradient-to-r from-[#0A8791] to-[#00C9D1] text-white text-[10px] sm:text-[18px] ",
-    outline:
-      " border-gray-300 text-white focus:ring-gray-400",
+    outline: " border-gray-300 text-white focus:ring-gray-400",
   };
 
   return (

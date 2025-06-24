@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "@components/ui/Button/Button";
-import img from "../../../asesst/images/promotion.png";
+import img from "../../../asesst/images/Promotion.png";
 
 
 const Promotion = () => {
