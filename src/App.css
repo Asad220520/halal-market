@@ -1,14 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #0A8791;
+  --color-primary: #0a8791;
   --cnc: 1280px;
 }
-
+.primary {
+  color: var(--color-primary);
+}
+.border-primary{
+  border-color: var(--color-primary);
+}
 .bg-primary {
   background-color: var(--color-primary);
 }
-.container{
+.container {
   max-width: var(--cnc);
   padding: 0 auto;
 }
