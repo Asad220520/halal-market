@@ -60,10 +60,10 @@ const Product = () => {
   return (
     <div className="container flex flex-col gap-6 sm:gap-12 mx-auto px-4  py-4 sm:py-12">
       <div className="flex justify-between items-center">
-        <h2 className="text-1xl sm:text-2xl font-semibold text-[#0a8791] mb-6">
+        <h2 className="text-1xl sm:text-2xl font-semibold text-[#0a8791] ">
           {el.title}
         </h2>
-        <h2 className="text-1xl sm:text-2xl font-semibold text-[#fdc818] mb-6">
+        <h2 className="text-1xl sm:text-2xl font-semibold text-[#fdc818] ">
           {el.text}
         </h2>
       </div>
@@ -73,10 +73,10 @@ const Product = () => {
         ))}
       </div>
       <div className="flex justify-between items-center">
-        <h2 className="text-1xl sm:text-2xl font-semibold text-[#0a8791] mb-6">
+        <h2 className="text-1xl sm:text-2xl font-semibold text-[#0a8791] ">
           {el.title}
         </h2>
-        <h2 className="text-1xl sm:text-2xl font-semibold text-[#fdc818] mb-6">
+        <h2 className="text-1xl sm:text-2xl font-semibold text-[#fdc818] ">
           {el.text}
         </h2>
       </div>
