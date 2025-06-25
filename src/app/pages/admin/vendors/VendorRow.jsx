@@ -37,17 +37,17 @@ const VendorRow = ({ vendor, index, filter, isSelected, onToggleSelect }) => {
       }`}
     >
       {/* Чекбокс (для filter="all") или нумерация (для filter="active") */}
-      {filter === "all" && (
+      {filter === "active" && (
         <td className="p-3">
           <input
             type="checkbox"
             checked={isSelected}
             onChange={onToggleSelect}
-            className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+            className="cursor-pointer h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
           />
         </td>
       )}
-      {filter === "active" && <td className="p-3">{index}</td>}
+      {filter === "blocked" && <td className="p-3">{index}</td>}
 
       {/* Основные данные */}
       <td className="p-3">
