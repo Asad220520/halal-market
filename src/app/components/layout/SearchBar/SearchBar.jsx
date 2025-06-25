@@ -58,7 +58,7 @@ const SearchBar = () => {
   return (
     <header className="container mx-auto w-full">
       <div className="max-w-7xl mx-auto flex items-center gap-4 mt-4 px-4">
-        <NavLink to={"/menu"}>
+        <NavLink className={'hidden sm:flex '} to={"/menu"}>
           <button className="hidden sm:flex items-center justify-center border border-[#0A8791] text-[#0A8791] bg-white rounded-xl w-[120px] h-[48px] text-sm font-medium">
             <RiMenu4Line
               size={16}
@@ -70,7 +70,7 @@ const SearchBar = () => {
         </NavLink>
         <div className="flex flex-1 bg-white border border-[#0A8791] w-[990px] sm:h-[48px] h-[36px] rounded-2xl  sm:rounded-xl overflow-hidden">
           <div className="flex items-center px-3 text-[#697077]">
-            <SearchBar size={18} />
+            <Search size={18} />
           </div>
           <input
             type="text"

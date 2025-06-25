@@ -49,6 +49,7 @@ import AdminRoute from "./AdminRoute";
 import SellerRoute from "./SellerRoute";
 import TestLogin from "../pages/TestLogin";
 import ResetPosswordConfirm from "../features/auth/ResetPosswordConfirm";
+import Menu from "../pages/Menu";
 
 export default function Router() {
   return (
@@ -57,6 +58,7 @@ export default function Router() {
         {/* Public */}
         <Route element={<MainLayout />}>
           <Route index element={<Home />} />
+          <Route path="menu" element={<Menu/>} />
           <Route path="product/:id" element={<ProductDetail />} />
           <Route path="category/:slug" element={<CategoryPage />} />
         </Route>
