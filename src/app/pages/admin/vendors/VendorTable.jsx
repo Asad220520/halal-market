@@ -1,9 +1,7 @@
-
-
 import VendorRow from "./VendorRow";
 import defaicon from "../../../assets/icons/defaultAvatar.png";
 import { useState } from "react";
-
+import { ArrowDown } from "lucide-react";
 
 const mockVendors = [
   {
@@ -86,20 +84,20 @@ const VendorTable = ({ search, filter }) => {
   };
 
   return (
-    <div className="cursor-pointer bg-white shadow rounded">
+    <div className="bg-white shadow rounded">
       <table className="min-w-full table-auto">
         <thead className="bg-[#E6F7F8] text-sm text-gray-600">
           <tr>
-            {filter === "all" && <th className="text-left">Выбрать</th>}
-            {filter === "active" && <th className="text-left">№</th>}
-            <th className="p-3 text-left">ФИО</th>
+            {filter === "active" && <th className="p-3 text-left">выбрать</th>}
+            {filter === "blocked" && <th className="p-3 text-left">№</th>}
+            <th className="flex center gap-1.5 p-3 text-left">
+              ФИО продавцов <ArrowDown width={15} />
+            </th>
             <th className="p-3 text-left">Название магазина</th>
             <th className="p-3 text-left">Категория</th>
             <th className="p-3 text-left">Телефон</th>
             {filter !== "blocked" && <th className="p-3 text-left">Email</th>}
-            {filter === "blocked" && (
-              <th className="p-3 text-left">...</th>
-            )}
+            {filter === "blocked" && <th className="p-3 text-left">...</th>}
             <th className="p-3 text-left"></th>
           </tr>
         </thead>
@@ -129,4 +127,3 @@ const VendorTable = ({ search, filter }) => {
 };
 
 export default VendorTable;
-
