@@ -1,5 +1,5 @@
-import { cn } from "@utils/cn"; // функция объединения классов (ниже)
-import { Loader2 } from "lucide-react"; // иконка загрузки (можно любую)
+import { cn } from "@utils/cn";
+import { Loader2 } from "lucide-react";
 
 export default function Button({
   children,

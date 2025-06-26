@@ -1,4 +1,4 @@
-import { FaCheck, FaRegHeart } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 import Image from "../../../assets/images/image.svg";
 import Button from "../../components/ui/Button/Button";
 import { IoIosMore } from "react-icons/io";
@@ -30,11 +30,11 @@ export const productList = [
   },
 ];
 
-export default function Wishlist() {
+function Purchases() {
   return (
     <div className="flex flex-col gap-7">
       <div className="flex items-center justify-between m-[20px_0]">
-        <h1 className="text-[#0A8791] text-[24px] font-medium">Сохраненные</h1>
+        <h1 className="text-[#0A8791] text-[24px] font-medium">Мои покупки</h1>
         <h2 className="text-[#FDC818] text-[18px] font-medium">Смотреть все</h2>
       </div>
       {productList.map((el) => (
@@ -62,22 +62,19 @@ export default function Wishlist() {
               <h4 className="text-[#A2A2A2]">Статус:</h4>
               <div className="flex items-center justify-between">
                 <Button
-                  className="bg-[#0A7780] text-white w-[200px]"
+                  className="bg-[#6CC51D] text-white w-[200px]"
                   icon={<FaCheck />}
                 >
-                  Сохранено
+                  Доставлено
                 </Button>
                 <p className="text-[#A2A2A2]">
-                  Дата:{" "}
+                  Дата доставки:{" "}
                   <span>
                     {new Date(el.delivery.dateDelivery).toLocaleDateString()}г
                   </span>
                 </p>
-                <a className="text-xl absolute top-20 right-5 cursor-pointer">
+                <a className="text-xl absolute top-7 right-5 cursor-pointer">
                   <IoIosMore />
-                </a>
-                <a className="text-2xl text-[#FE585A] absolute top-7 right-5 cursor-pointer">
-                  <FaRegHeart />
                 </a>
               </div>
             </div>
@@ -87,3 +84,5 @@ export default function Wishlist() {
     </div>
   );
 }
+
+export default Purchases;
