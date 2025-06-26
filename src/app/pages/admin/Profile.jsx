@@ -30,7 +30,7 @@ const AdminProfile = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto pt-36 px-4">
+    <div className="max-w-3xl mx-auto pt-16 ">
       {/* Фото профиля */}
       <div className="mb-8">
         <h1 className="primary text-xl font-semibold text-primary mb-4">

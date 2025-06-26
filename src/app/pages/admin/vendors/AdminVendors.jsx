@@ -10,9 +10,8 @@ const AdminVendors = () => {
   const [page, setPage] = useState(1);
 
   return (
-    <div className="pt-20 px-20">
-      <h1 className="text-2xl font-semibold text-primary mb-6">Продавцы</h1>
-      <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-4">
+    <div className="">
+      <div className="flex flex-col md:flex-row  md:justify-between md:items-center gap-4 mb-4">
         <VendorFilters filter={filter} setFilter={setFilter} />
         {filter !== "active" ? (
           <VendorSearch search={search} setSearch={setSearch} />
@@ -21,7 +20,7 @@ const AdminVendors = () => {
             onClick={() =>
               alert("Подтверждение регистрации выбранных продавцов")
             }
-            className="px-4 py-2 bg-primary text-white rounded hover:bg-opacity-90"
+            className="px-6 py-2 bg-primary text-white rounded hover:bg-opacity-90"
           >
             Подтвердить регистрацию
           </button>

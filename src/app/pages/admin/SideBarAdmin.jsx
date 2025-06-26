@@ -15,7 +15,7 @@ import logo from "../../assets/icons/logo.svg";
 
 const SideBarAdmin = () => {
   return (
-    <aside className="w-64 bg-white text-black p-6 space-y-4">
+    <aside className="w-64 border-r-1 border-gray-300 text-black p-6 space-y-4">
       <div className="center flex flex-col items-center space-y-4">
         <img src={logo} alt="logo" />
         <img src={adminuser} alt="user" width={48} height={48} />
@@ -23,7 +23,7 @@ const SideBarAdmin = () => {
       <nav className="pt-5">
         <ul className="space-y-80">
           <li className="space-y-5">
-            <NavLink
+            {/* <NavLink
               to="/admin"
               className={({ isActive }) =>
                 `flex items-center gap-2 px-2 py-1 rounded hover:text-blue-400 `
@@ -31,7 +31,7 @@ const SideBarAdmin = () => {
             >
               <FiGrid size={20} className="text-blue-400" />
               <span className="text-primary">Рабочий стол</span>
-            </NavLink>
+            </NavLink> */}
 
             <NavLink
               to="/admin/vendors"
