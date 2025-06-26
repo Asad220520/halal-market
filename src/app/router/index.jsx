@@ -16,6 +16,7 @@ import RegisterPage from "../features/auth/RegisterPage";
 
 // Private Pages (Client)
 import ProfileHome from "../pages/profile/ProfileHome";
+import Purchases from "../pages/profile/Purchases";
 import Orders from "../pages/profile/Orders";
 import Wishlist from "../pages/profile/Wishlist";
 import EditProfile from "../pages/profile/EditProfile";
@@ -68,6 +69,7 @@ export default function Router() {
         <Route element={<PrivateRoute />}>
           <Route element={<MainLayout />}>
             <Route path="/profile" element={<ProfileHome />} />
+            <Route path="profile/purchases" element={<Purchases />} />
             <Route path="profile/orders" element={<Orders />} />
             <Route path="profile/wishlist" element={<Wishlist />} />
             <Route path="profile/edit" element={<EditProfile />} />
