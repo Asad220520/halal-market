@@ -15,7 +15,6 @@ import LoginPage from "../features/auth/LoginPage";
 import RegisterPage from "../features/auth/RegisterPage";
 import ForgatPassword from "../features/auth/ForgotPassword";
 
-
 // Private Pages (Client)
 import ProfileHome from "../pages/profile/ProfileHome";
 import Purchases from "../pages/profile/Purchases";
@@ -37,11 +36,11 @@ import SellerSettings from "../pages/seller/Settings";
 // Admin Pages
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import AdminVendors from "../pages/admin/vendors/AdminVendors";
-import AdminProducts from "../pages/admin/Products";
-import AdminAnalytics from "../pages/admin/Analytics";
+import AdminProducts from "../pages/admin/products/Products";
+import AdminAnalytics from "../pages/admin/Analytics/Analytics";
 import AdminQuestions from "../pages/admin/Questions";
 import AdminOffer from "../pages/admin/Offer";
-import AdminSettings from "../pages/admin/Settings";
+import AdminSettings from "../pages/admin/AdminSettings/Settings";
 import AdminProfile from "../pages/admin/Profile";
 
 // Guards
@@ -51,6 +50,8 @@ import SellerRoute from "./SellerRoute";
 import TestLogin from "../pages/TestLogin";
 import ResetPosswordConfirm from "../features/auth/ResetPosswordConfirm";
 import Menu from "../pages/Menu";
+import AuthLoginSeller from "../features/authSeller/AuthLoginSeller";
+import AuthPasswordSeller from "../features/authSeller/AuthPasswordSeller";
 
 export default function Router() {
   return (
@@ -59,7 +60,7 @@ export default function Router() {
         {/* Public */}
         <Route element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path="menu" element={<Menu/>} />
+          <Route path="menu" element={<Menu />} />
           <Route path="product/:id" element={<ProductDetail />} />
           <Route path="category/:slug" element={<CategoryPage />} />
         </Route>
@@ -69,7 +70,12 @@ export default function Router() {
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
           <Route path="forgot-password" element={<ForgatPassword />} />
-          <Route path="reset-password-confirm" element={<ResetPosswordConfirm />} />
+          <Route
+            path="reset-password-confirm"
+            element={<ResetPosswordConfirm />}
+          />
+          <Route path="authSeller" element={<AuthLoginSeller />} />
+          <Route path="authPass" element={<AuthPasswordSeller />} />
         </Route>
 
         {/* Client profile */}
