@@ -67,7 +67,7 @@ const Product = () => {
           {el.text}
         </h2>
       </div>
-      <div className='flex sm:justify-center flex-wrap gap-2 items-center sm:gap-14  sm:items-start"'>
+      <div className='flex justify-center flex-wrap gap-2 items-center sm:gap-14  sm:items-start"'>
         {product.map((el, id) => (
           <ProductCard el={el} key={id} />
         ))}
@@ -80,7 +80,7 @@ const Product = () => {
           {el.text}
         </h2>
       </div>
-      <div className='flex sm:justify-center flex-wrap gap-2 items-center sm:gap-14  sm:items-start"'>
+      <div className='flex justify-center flex-wrap gap-2 items-center sm:gap-14  sm:items-start"'>
         {product.map((el, id) => (
           <ProductCard el={el} key={id} />
         ))}

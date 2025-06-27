@@ -1,6 +1,6 @@
 import React from "react";
 import image from "../../asesst/images/product(1).png";
-import CategoryCard from "../components/ui/CategoryCard/CategoryCard";
+import MenuCard from "../components/ui/MenuCard/MenuCard";
 
 const Menu = () => {
   const categories = [
@@ -36,16 +36,10 @@ const Menu = () => {
   ];
 
   return (
-    <div className="container flex flex-col gap-5 sm:gap-10 mx-auto px-4  py-4 sm:py-12">
-      <div className="flex justify-between items-center">
-        <h2 className="text-1xl sm:text-2xl font-semibold text-[#0a8791] ">
-          Меню
-        </h2>
-        <h2 className="text-1xl sm:text-2xl font-semibold text-[#fdc818] "></h2>
-      </div>
+    <div className="container  mx-auto px-4  pb-4 sb:pи-12">
       <div className='flex justify-center flex-wrap gap-2 items-center sm:gap-12  sm:items-start"'>
         {categories.map((el, id) => (
-          <CategoryCard el={el} key={id} />
+          <MenuCard el={el} key={id} />
         ))}
       </div>
     </div>
