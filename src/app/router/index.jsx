@@ -52,17 +52,22 @@ import ResetPosswordConfirm from "../features/auth/ResetPosswordConfirm";
 import Menu from "../pages/Menu";
 import AuthLoginSeller from "../features/authSeller/AuthLoginSeller";
 import AuthPasswordSeller from "../features/authSeller/AuthPasswordSeller";
+import PrivateLayout from "../layouts/PrivateLayout";
+import ProductPage from "../pages/PruductPage";
+import MenuLayout from "../layouts/MenuLayout";
 
 export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Public */}
         <Route element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path="menu" element={<Menu />} />
+          <Route path="Меню" element={<MenuLayout />}>
+            <Route index element={<Menu />} />
+            <Route path=":category" element={<CategoryPage />} />
+            <Route path=":category/:product" element={<ProductPage />} />
+          </Route>
           <Route path="product/:id" element={<ProductDetail />} />
-          <Route path="category/:slug" element={<CategoryPage />} />
         </Route>
 
         {/* Auth */}
@@ -80,7 +85,7 @@ export default function Router() {
 
         {/* Client profile */}
         <Route element={<PrivateRoute />}>
-          <Route element={<MainLayout />}>
+          <Route element={<PrivateLayout />}>
             <Route path="/profile" element={<ProfileHome />} />
             <Route path="profile/purchases" element={<Purchases />} />
             <Route path="profile/orders" element={<Orders />} />
