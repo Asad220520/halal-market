@@ -15,7 +15,7 @@ import logo from "../../assets/icons/logo.svg";
 
 const SideBarAdmin = () => {
   return (
-    <aside className="w-64 border-r-1 border-gray-300 text-black p-6 space-y-4">
+    <aside className="w-64 sticky top-0 left-0 h-screen border-r-1 border-gray-300 text-black p-6 space-y-4">
       <div className="center flex flex-col items-center space-y-4">
         <img src={logo} alt="logo" />
         <img src={adminuser} alt="user" width={48} height={48} />
