@@ -76,7 +76,7 @@ export default function AdminProducts() {
 
   return (
     <div className="">
-      <div className="flex justify-between">
+      <div className="flex justify-between w-[80%]">
         <div className="flex gap-2 mb-4">
           {[
             { label: "Модерация товаров", value: "moderation" },
