@@ -55,6 +55,7 @@ import AuthPasswordSeller from "../features/authSeller/AuthPasswordSeller";
 import PrivateLayout from "../layouts/PrivateLayout";
 import ProductPage from "../pages/PruductPage";
 import MenuLayout from "../layouts/MenuLayout";
+import Cart from "../pages/Cart";
 
 export default function Router() {
   return (
@@ -66,8 +67,9 @@ export default function Router() {
             <Route index element={<Menu />} />
             <Route path=":category" element={<CategoryPage />} />
             <Route path=":category/:product" element={<ProductPage />} />
+            <Route path=":category/:product/:id" element={<ProductDetail />} />
           </Route>
-          <Route path="product/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart/>} />
         </Route>
 
         {/* Auth */}

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "@components/ui/Button/Button";
 import SplashScreen from "@components/ui/SplashScreen";
+import { ShoppingCart } from "lucide-react";
+import ResponsiveIcon from "../../ui/ResponsiveIcon/ResponsiveIcon";
 
 const Header = () => {
   const [loading, setLoading] = useState(false);
@@ -35,6 +37,17 @@ const Header = () => {
           <Button variant="primary" onClick={handleLoginClick}>
             Войти
           </Button>
+          <Button
+            variant="primary"
+            icon={
+              <ResponsiveIcon
+                Icon={ShoppingCart}
+                sizeMobile={12}
+                sizeDesktop={18}
+              />
+            }
+            onClick={() => navigate("/cart")}
+          ></Button>
         </div>
       </div>
     </header>

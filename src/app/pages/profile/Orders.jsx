@@ -4,7 +4,7 @@ import Vector from "../../../assets/images/Vector.svg";
 import Button from "../../components/ui/Button/Button";
 import { IoIosMore } from "react-icons/io";
 
-export const productList = [
+const productList = [
   {
     id: 1,
     image: Image,

@@ -19,7 +19,7 @@ export default function Button({
     primary:
       "bg-[#0A8791] cursor-pointer text-white rounded hover:border-white",
     secondary:
-      "bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-400",
+      "bg-gray-100 border-2 border-[#0A8791] text-[#0A8791] hover:bg-gray-200 ",
     gradient:
       "bg-gradient-to-r from-[#0A8791] to-[#00C9D1] text-white text-[10px] sm:text-[18px] ",
     outline: "border-gray-300 text-white focus:ring-gray-400",
