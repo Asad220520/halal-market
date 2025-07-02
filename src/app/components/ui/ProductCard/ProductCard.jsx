@@ -2,8 +2,11 @@ import React from "react";
 import Button from "@components/ui/Button/Button";
 import { ShoppingCart, Heart } from "lucide-react";
 import ResponsiveIcon from "../ResponsiveIcon/ResponsiveIcon";
+import { Link } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ el }) => {
+  const nav = useNavigate();
   return (
     <div className="relative w-[114px] h-[165px] sm:w-[265px] sm:h-[340px] rounded-lg shadow-[0_3px_14px_rgba(0,0,0,0.1)] flex flex-col justify-between bg-white">
       <div className="absolute sm:top-3 text-[#fe585a] top-1 sm:right-3 right-1 z-10">
@@ -11,7 +14,10 @@ const ProductCard = ({ el }) => {
         {/*FaHeart*/}
       </div>
 
-      <div className="m-auto w-[80%] h-[60%] flex items-center justify-center">
+      <div
+        onClick={() => nav(`${el.id}`)}
+        className="m-auto w-[80%] h-[60%] flex items-center justify-center"
+      >
         <img
           src={el.image}
           alt={el.title}
