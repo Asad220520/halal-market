@@ -15,7 +15,7 @@ const ProductCard = ({ el }) => {
       </div>
 
       <div
-        onClick={() => nav(`${el.id}`)}
+        onClick={() => nav(`product/${el.id}`)}
         className="m-auto w-[80%] h-[60%] flex items-center justify-center"
       >
         <img

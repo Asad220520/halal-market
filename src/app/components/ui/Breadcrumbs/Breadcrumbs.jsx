@@ -19,7 +19,7 @@ const Breadcrumbs = () => {
 
   return (
     <nav className=" container  mx-auto px-4  my-5 sm:my-10">
-      <div className="text-1xl sm:text-2xl font-[400] sm:font-[500]">
+      <div className="text-[12px] sm:text-[16px] font-[400] sm:font-[500]">
         {pathnames.map((segment, index) => {
           const to = "/" + pathnames.slice(0, index + 1).join("/");
           const isLast = index === pathnames.length - 1;
