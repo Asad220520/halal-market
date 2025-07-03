@@ -8,7 +8,6 @@ import AdminLayout from "../layouts/AdminLayout";
 
 // Public Pages
 import Home from "../pages/Home/Home";
-import ProductDetail from "../pages/ProductDetail";
 import CategoryPage from "../pages/CategoryPage";
 import NotFound from "../pages/NotFound";
 import LoginPage from "../features/auth/LoginPage";
@@ -55,7 +54,9 @@ import AuthPasswordSeller from "../features/authSeller/AuthPasswordSeller";
 import PrivateLayout from "../layouts/PrivateLayout";
 import ProductPage from "../pages/PruductPage";
 import MenuLayout from "../layouts/MenuLayout";
-import Cart from "../pages/Cart";
+import Cart from "../pages/cart/Cart";
+import Receipt from "../pages/cart/Receipt";
+import ProductDetail from "../pages/productDetail/ProductDetail";
 
 export default function Router() {
   return (
@@ -67,9 +68,10 @@ export default function Router() {
             <Route index element={<Menu />} />
             <Route path=":category" element={<CategoryPage />} />
             <Route path=":category/:product" element={<ProductPage />} />
-            <Route path=":category/:product/:id" element={<ProductDetail />} />
           </Route>
-          <Route path="/cart" element={<Cart/>} />
+            <Route path="product/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/receipt" element={<Receipt />} />
         </Route>
 
         {/* Auth */}
