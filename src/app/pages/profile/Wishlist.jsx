@@ -32,7 +32,7 @@ export const productList = [
 
 export default function Wishlist() {
   return (
-    <div className="flex flex-col gap-7">
+    <div className="container px-4 m-auto flex flex-col gap-7">
       <div className="flex items-center justify-between m-[20px_0]">
         <h1 className="text-[#0A8791] text-[24px] font-medium">Сохраненные</h1>
         <h2 className="text-[#FDC818] text-[18px] font-medium">Смотреть все</h2>

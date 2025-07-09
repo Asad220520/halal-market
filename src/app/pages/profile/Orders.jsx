@@ -33,7 +33,7 @@ export const productList = [
 
 export default function Orders() {
   return (
-    <div className="flex flex-col gap-7">
+    <div className="container px-4 m-auto flex flex-col gap-7">
       <div className="flex items-center justify-between m-[20px_0]">
         <h1 className="text-[#0A8791] text-[24px] font-medium">Статус текущих заказов</h1>
         <h2 className="text-[#FDC818] text-[18px] font-medium">Смотреть все</h2>
@@ -63,7 +63,7 @@ export default function Orders() {
               <h4 className="text-[#A2A2A2]">Статус:</h4>
               <div className="flex items-center justify-between">
                 <Button
-                  className="bg-[#FDC818] text-white w-[200px]"
+                  className="bg-[#FDC818] text-white w-[200px] flex items-center gap-3"
                 >
                   <img src={Vector} alt="img" />
                   В пути
