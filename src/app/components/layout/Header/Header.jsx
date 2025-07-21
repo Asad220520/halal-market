@@ -28,26 +28,30 @@ const Header = () => {
 
   return (
     <header className="bg-primary hidden md:flex">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="text-2xl font-semibold text-white">HALAL Industry</div>
-        <div className="flex gap-6">
-          <Button variant="outline" onClick={handleSellerClick}>
-            Стать продавцом
-          </Button>
-          <Button variant="primary" onClick={handleLoginClick}>
-            Войти
-          </Button>
-          <Button
-            variant="primary"
-            icon={
-              <ResponsiveIcon
-                Icon={ShoppingCart}
-                sizeMobile={12}
-                sizeDesktop={18}
-              />
-            }
-            onClick={() => navigate("/cart")}
-          ></Button>
+      <div className="container">
+        <div className=" mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="text-2xl font-semibold text-white">
+            HALAL Industry
+          </div>
+          <div className="flex gap-6">
+            <Button variant="outline" onClick={handleSellerClick}>
+              Стать продавцом
+            </Button>
+            <Button variant="primary" onClick={handleLoginClick}>
+              Войти
+            </Button>
+            <Button
+              variant="primary"
+              icon={
+                <ResponsiveIcon
+                  Icon={ShoppingCart}
+                  sizeMobile={12}
+                  sizeDesktop={18}
+                />
+              }
+              onClick={() => navigate("/cart")}
+            ></Button>
+          </div>
         </div>
       </div>
     </header>
