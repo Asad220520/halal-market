@@ -33,9 +33,12 @@ const productList = [
 
 export default function Orders() {
   return (
-    <div className="flex flex-col gap-7">
-      <div className="flex items-center justify-between m-[20px_0]">
-        <h1 className="text-[#0A8791] text-[24px] font-medium">Статус текущих заказов</h1>
+    <div className="flex gap-7">
+      <div className="container">
+         <div className="flex items-center justify-between m-[20px_0]">
+        <h1 className="text-[#0A8791] text-[24px] font-medium">
+          Статус текущих заказов
+        </h1>
         <h2 className="text-[#FDC818] text-[18px] font-medium">Смотреть все</h2>
       </div>
       {productList.map((el) => (
@@ -62,11 +65,8 @@ export default function Orders() {
               </h4>
               <h4 className="text-[#A2A2A2]">Статус:</h4>
               <div className="flex items-center justify-between">
-                <Button
-                  className="bg-[#FDC818] text-white w-[200px]"
-                >
-                  <img src={Vector} alt="img" />
-                  В пути
+                <Button className="bg-[#FDC818] text-white w-[200px]">
+                  <img src={Vector} alt="img" />В пути
                 </Button>
                 <p className="text-[#A2A2A2]">
                   Дата отправки:{" "}
@@ -85,6 +85,8 @@ export default function Orders() {
           </div>
         </div>
       ))}
+      </div>
+     
     </div>
   );
 }

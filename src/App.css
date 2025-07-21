@@ -15,5 +15,6 @@
 }
 .container {
   max-width: var(--cnc);
-  padding: 0 auto;
+  padding: 0 15px;
+  margin: 0 auto;
 }
