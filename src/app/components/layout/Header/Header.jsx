@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Button from "@components/ui/Button/Button";
 import SplashScreen from "@components/ui/SplashScreen";
 import { ShoppingCart } from "lucide-react";
@@ -30,9 +30,9 @@ const Header = () => {
     <header className="bg-primary hidden md:flex">
       <div className="container">
         <div className=" mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="text-2xl font-semibold text-white">
+          <NavLink to={"/"} className="text-2xl font-semibold text-white">
             HALAL Industry
-          </div>
+          </NavLink>
           <div className="flex gap-6">
             <Button variant="outline" onClick={handleSellerClick}>
               Стать продавцом

@@ -6,29 +6,11 @@ import Product from "./Product";
 
 const Home = () => {
   return (
-    <>
+    <div className="sm:py-8  py-4 pb-[100px]">
       <Promotion />
       <Categories />
       <Product />
-      {/* <Button>По умолчанию</Button>
-
-    <div className="space-y-4 p-6">
-      home
-      <Button>По умолчанию</Button>
-      <Button variant="primary">Primary</Button>
-      <Button variant="secondary">Secondary</Button>
-      <Button icon={<ShoppingCart />} iconPosition="vniz" variant="outline">
-        Outline
-      </Button>
-      <Button icon={<ShoppingCart />} iconPosition="left">
-        Купить
-      </Button>
-      <Button icon={<ShoppingCart />} iconPosition="right">
-        В корзину
-      </Button>
-      <Button loading>Загрузка...</Button>
-   */}
-    </>
+    </div>
   );
 };
 

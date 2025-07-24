@@ -36,7 +36,7 @@ function ProductDetail() {
             </div>
 
             {/* Инфоблок со сворачиванием только на sm и ниже */}
-            <div className="space-y-1 text-[8px] sm:text-base">
+            <div className="space-y-1 text-[8px] sm:text-[18px] ">
               {/* sm и меньше: свернутая версия */}
               {!expanded && (
                 <div className="sm:hidden space-y-1">
@@ -73,7 +73,7 @@ function ProductDetail() {
                   onClick={() => setExpanded(false)}
                   className={`${
                     !expanded ? "hidden sm:block " : ""
-                  } space-y-0.1 border border-gray-600 rounded-lg p-1.5 mb-2.5`}
+                  } space-y-0.1 sm:border-none border border-gray-600 rounded-lg p-1.5 mb-2.5`}
                 >
                   <div>
                     <span className="text-gray-600">
