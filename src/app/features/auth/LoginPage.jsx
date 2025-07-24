@@ -100,7 +100,7 @@ export default function LoginForm() {
               }`}
               {...register("password", {
                 required: "Пароль обязателен",
-                minLength: { value: 6, message: "Минимум 6 символов" },
+                minLength: { value: 5, message: "Минимум 5 символов" },
               })}
             />
           </div>

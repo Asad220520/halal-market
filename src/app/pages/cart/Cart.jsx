@@ -66,6 +66,7 @@ const Cart = () => {
     .reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
+    <div className="sm:py-8  py-4 pb-[100px]">
     <div className="container mx-auto px-4 pt-6 pb-20">
       <div className="flex items-center justify-between  ">
         <h2 className="text-2xl font-bold text-teal-600 mb-2">Корзина</h2>
@@ -202,6 +203,8 @@ const Cart = () => {
         </div>
       )}
     </div>
+    </div>
+
   );
 };
 

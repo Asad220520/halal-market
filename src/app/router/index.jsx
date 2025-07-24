@@ -7,7 +7,7 @@ import SellerLayout from "../layouts/SellerLayout";
 import AdminLayout from "../layouts/AdminLayout";
 
 // Public Pages
-import Home from "../pages/Home/Home";
+import Home from "../pages/home/Home";
 import CategoryPage from "../pages/CategoryPage";
 import NotFound from "../pages/NotFound";
 import LoginPage from "../features/auth/LoginPage";

@@ -1,7 +1,5 @@
-import { ShoppingCart } from "lucide-react";
-import Button from "@components/ui/Button";
 import Promotion from "./Promotion";
-import Categories from "./Categories";
+import Categories from "./Categorie";
 import Product from "./Product";
 
 const Home = () => {

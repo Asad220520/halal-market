@@ -1,16 +1,23 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUserProfile } from "../../features/auth/autSlice";
+import { logout } from "../../features/auth/autSlice";
 import userLogo from "../../../assets/images/user.svg";
 import Button from "@components/ui/Button/Button";
 import { LuPencil } from "react-icons/lu";
 import { FaRegHeart } from "react-icons/fa";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 function ProfileHome() {
   const dispatch = useDispatch();
   const authData = useSelector((state) => state.auth.user);
   const loading = useSelector((state) => state.auth.loading);
+  const navigate = useNavigate();
+
+  function Logout() {
+    dispatch(logout());
+    navigate("/login");
+  }
 
   useEffect(() => {
     if (authData && !authData.user?.first_name) {
@@ -35,59 +42,68 @@ function ProfileHome() {
       : profileUser.username || "Пользователь";
 
   return (
-    <section className="container  mx-auto my-10 px-4">
-      <h1 className="mb-8 text-4xl font-semibold text-teal-700">Мой профиль</h1>
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white shadow-lg rounded-lg p-8">
-        {/* Аватар и имя */}
-        <div className="flex items-center gap-6 md:gap-8 flex-shrink-0">
-          <img
-            className="w-36 h-36 rounded-full object-cover border-4 border-teal-300"
-            src={userLogo}
-            alt="user avatar"
-          />
-          <div>
-            <h2 className="text-3xl font-semibold text-teal-700">{fullName}</h2>
-            <p className="text-gray-500 text-sm mt-1">Пользователь</p>
-            <Link to={"profile/edit"}>
-              <Button variant="primary" icon={<LuPencil />} className="mt-4">
-                Редактировать профиль
+    <div className="sm:py-8  py-4 pb-[100px]">
+      <section className="container  mx-auto my-10 px-4">
+        <h1 className="mb-8 text-4xl font-semibold text-teal-700">
+          Мой профиль
+        </h1>
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white shadow-lg rounded-lg p-8">
+          {/* Аватар и имя */}
+          <div className="flex items-center gap-6 md:gap-8 flex-shrink-0">
+            <img
+              className="w-36 h-36 rounded-full object-cover border-4 border-teal-300"
+              src={userLogo}
+              alt="user avatar"
+            />
+            <div className="flex flex-col items-start">
+              <h2 className="text-3xl font-semibold text-teal-700">
+                {fullName}
+              </h2>
+              <p className="text-gray-500 text-sm mt-1">Пользователь</p>
+              <Link to={"profile/edit"}>
+                <Button variant="primary" icon={<LuPencil />} className="mt-4">
+                  Редактировать профиль
+                </Button>
+              </Link>
+              <Button onClick={Logout} variant="secondary" className="mt-4">
+                Выйти
               </Button>
-            </Link>
+            </div>
+          </div>
+
+          {/* Блоки с навигацией */}
+          <div className="flex justify-between gap-5">
+            <NavLink
+              to={"profile/purchases"}
+              className="flex flex-col justify-center items-center border border-gray-300 rounded-lg w-56 h-40 hover:shadow-md transition-shadow"
+            >
+              <h3 className="text-teal-700 text-xl font-medium mb-2">
+                Мои покупки
+              </h3>
+              <span className="text-red-500 text-5xl font-bold">0</span>
+            </NavLink>
+            <NavLink
+              to={"profile/orders"}
+              className="flex flex-col justify-center items-center border border-gray-300 rounded-lg w-56 h-40 hover:shadow-md transition-shadow"
+            >
+              <h3 className="text-teal-700 text-xl font-medium mb-2">
+                Статус текущих заказов
+              </h3>
+              <span className="text-red-500 text-5xl font-bold">0</span>
+            </NavLink>
+            <NavLink
+              to={"profile/wishlist"}
+              className="flex flex-col justify-center items-center border border-gray-300 rounded-lg w-56 h-40 hover:shadow-md transition-shadow"
+            >
+              <h3 className="text-teal-700 text-xl font-medium mb-2">
+                Сохранённые
+              </h3>
+              <FaRegHeart className="text-red-500 text-5xl" />
+            </NavLink>
           </div>
         </div>
-
-        {/* Блоки с навигацией */}
-        <div className="flex justify-between gap-5">
-          <NavLink
-            to={"profile/purchases"}
-            className="flex flex-col justify-center items-center border border-gray-300 rounded-lg w-56 h-40 hover:shadow-md transition-shadow"
-          >
-            <h3 className="text-teal-700 text-xl font-medium mb-2">
-              Мои покупки
-            </h3>
-            <span className="text-red-500 text-5xl font-bold">0</span>
-          </NavLink>
-          <NavLink
-            to={"profile/orders"}
-            className="flex flex-col justify-center items-center border border-gray-300 rounded-lg w-56 h-40 hover:shadow-md transition-shadow"
-          >
-            <h3 className="text-teal-700 text-xl font-medium mb-2">
-              Статус текущих заказов
-            </h3>
-            <span className="text-red-500 text-5xl font-bold">0</span>
-          </NavLink>
-          <NavLink
-            to={"profile/wishlist"}
-            className="flex flex-col justify-center items-center border border-gray-300 rounded-lg w-56 h-40 hover:shadow-md transition-shadow"
-          >
-            <h3 className="text-teal-700 text-xl font-medium mb-2">
-              Сохранённые
-            </h3>
-            <FaRegHeart className="text-red-500 text-5xl" />
-          </NavLink>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 
