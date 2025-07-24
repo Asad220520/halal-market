@@ -18,30 +18,35 @@ const Breadcrumbs = () => {
   if (pathnames.length < 1) return null;
 
   return (
-    <nav className=" container  mx-auto px-4  my-5 sm:my-10">
-      <div className="text-[12px] sm:text-[16px] font-[400] sm:font-[500]">
-        {pathnames.map((segment, index) => {
-          const to = "/" + pathnames.slice(0, index + 1).join("/");
-          const isLast = index === pathnames.length - 1;
-          const label = labelMap[segment] || formatLabel(segment);
+    <div className="mx-auto px-4  my-b sm:mb-8">
+      <nav className=" container  ">
+        <div className="text-[12px] sm:text-[16px] font-[400] sm:font-[500]">
+          {pathnames.map((segment, index) => {
+            const to = "/" + pathnames.slice(0, index + 1).join("/");
+            const isLast = index === pathnames.length - 1;
+            const label = labelMap[segment] || formatLabel(segment);
 
-          return (
-            <span key={to}>
-              {!isLast ? (
-                <>
-                  <Link to={to} className="hover:text-[#0A8791] text-[#868889]">
-                    {label}
-                  </Link>
-                  <span className="text-[#868889]">/</span>
-                </>
-              ) : (
-                <span className="text-[#0A8791]">{label}</span>
-              )}
-            </span>
-          );
-        })}
-      </div>
-    </nav>
+            return (
+              <span key={to}>
+                {!isLast ? (
+                  <>
+                    <Link
+                      to={to}
+                      className="hover:text-[#0A8791] text-[#868889]"
+                    >
+                      {label}
+                    </Link>
+                    <span className="text-[#868889]">/</span>
+                  </>
+                ) : (
+                  <span className="text-[#0A8791]">{label}</span>
+                )}
+              </span>
+            );
+          })}
+        </div>
+      </nav>
+    </div>
   );
 };
 

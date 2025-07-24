@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Menu } from "lucide-react";
 import axios from "axios";
 import { useEffect } from "react";
-const Categories = () => {
+const Categorie = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [categories, setCategories] = useState([]);
@@ -112,4 +112,4 @@ if (!categories) {
   );
 };
 
-export default Categories;
+export default Categorie;

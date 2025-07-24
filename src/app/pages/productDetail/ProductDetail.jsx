@@ -9,6 +9,8 @@ function ProductDetail() {
   const [expanded, setExpanded] = useState(false);
 
   return (
+    <div className="sm:py-4  py-4 pb-[100px]">
+
     <div className="space-y-8 container mx-auto  px-4 py-6 sm:py-12">
       {/* Main Product Section */}
       <div className="bg-white rounded-lg sm:shadow-[0px_0px_4px_0px_gray] p-0 sm:p-6  mb-6">
@@ -176,6 +178,7 @@ function ProductDetail() {
 
       {/* Individual Review */}
       <ReviewList />
+    </div>
     </div>
   );
 }
