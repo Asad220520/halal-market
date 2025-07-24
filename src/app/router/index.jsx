@@ -68,8 +68,12 @@ export default function Router() {
             <Route index element={<Menu />} />
             <Route path=":category" element={<CategoryPage />} />
             <Route path=":category/:product" element={<ProductPage />} />
+            <Route
+              path=":category/:product/:name"
+              element={<ProductDetail />}
+            />
           </Route>
-            <Route path="product/:id" element={<ProductDetail />} />
+          <Route path="product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/receipt" element={<Receipt />} />
         </Route>
@@ -90,7 +94,7 @@ export default function Router() {
         {/* Client profile */}
         <Route element={<PrivateRoute />}>
           <Route element={<PrivateLayout />}>
-            <Route path="/profile" element={<ProfileHome />} />
+            <Route path="/profile" element={<Purchases />} />
             <Route path="profile/purchases" element={<Purchases />} />
             <Route path="profile/orders" element={<Orders />} />
             <Route path="profile/wishlist" element={<Wishlist />} />
