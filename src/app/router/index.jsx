@@ -66,10 +66,10 @@ export default function Router() {
           <Route index element={<Home />} />
           <Route path="Меню" element={<MenuLayout />}>
             <Route index element={<Menu />} />
-            <Route path=":category" element={<CategoryPage />} />
-            <Route path=":category/:product" element={<ProductPage />} />
+            <Route path=":id/:title" element={<CategoryPage />} />
+            <Route path=":id/:title/:product" element={<ProductPage />} />
             <Route
-              path=":category/:product/:name"
+              path=":id/:title/:product/:name"
               element={<ProductDetail />}
             />
           </Route>

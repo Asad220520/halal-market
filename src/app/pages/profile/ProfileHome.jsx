@@ -7,12 +7,29 @@ import Button from "@components/ui/Button/Button";
 import { LuPencil } from "react-icons/lu";
 import { FaRegHeart } from "react-icons/fa";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function ProfileHome() {
   const dispatch = useDispatch();
   const authData = useSelector((state) => state.auth.user);
   const loading = useSelector((state) => state.auth.loading);
   const navigate = useNavigate();
+
+  async function getUser() {
+    axios
+      .get("http://16.171.226.219/users/", {
+        headers: {
+          Accept: "application/json",
+          // Authorization: "Bearer YOUR_TOKEN", // если требуется
+          // "X-CSRFTOKEN": "your_csrf_token",   // если нужно
+        },
+        withCredentials: true, // если куки
+      })
+      .then((res) => console.log(res.data))
+      .catch((err) => console.error("Ошибка:", err));
+  }
+  console.log(getUser().data);
+  
 
   function Logout() {
     dispatch(logout());
