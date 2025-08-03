@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const API_BASE_URL = "http://13.60.188.54"; // API логина/регистрации
-const PROFILE_URL = "http://56.228.28.194/user/"; // API профиля
+const API_BASE_URL = "http://16.171.226.219"; // API логина/регистрации
+const PROFILE_URL = "http://16.171.226.219/user/"; // API профиля
 
 // Логин
 export const login = createAsyncThunk(
