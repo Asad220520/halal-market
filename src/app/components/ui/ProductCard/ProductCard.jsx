@@ -20,7 +20,7 @@ const ProductCard = ({ el }) => {
         className="m-auto w-[80%] h-[60%] flex items-center justify-center"
       >
         <img
-          src={el.images?.[0]?.image || "/fallback.jpg"}
+          src={el.images?.[1]?.image || "/fallback.jpg"}
           alt={el.product_name}
           className="object-cover rounded-[100px]"
         />
@@ -32,10 +32,10 @@ const ProductCard = ({ el }) => {
         </h2>
         <div className="flex justify-between items-center w-full px-2 sm:px-4">
           <h3 className="text-[#3e3e3e] text-[16px] sm:text-2xl font-medium">
-            {el.title}
+            {el.product_name}
           </h3>
           <span className="text-[#a1a1a1] text-[10px] sm:text-xl">
-            {el.package_content}
+            {el.weight?.slice(0,2)}шт
           </span>
         </div>
 

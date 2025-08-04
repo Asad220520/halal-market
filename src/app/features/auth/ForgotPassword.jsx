@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Mail } from "lucide-react";
 import Button from "@components/ui/Button/Button";
+import { Link } from "react-router-dom";
 
 export default function ForgotPasswordForm() {
   const {
@@ -15,7 +16,7 @@ export default function ForgotPasswordForm() {
   };
 
   return (
-    <div className="pt-35 px-10">
+    <div className="pt-20 px-10">
       <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto">
         <h2 className="text-3xl font-bold mb-6 text-center">
           Восстановление пароля!
@@ -47,7 +48,6 @@ export default function ForgotPasswordForm() {
             <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
           )}
         </div>
-
         {/* Подтверждение */}
         <p className="text-sm text-gray-500 mb-4">
           На указанную электронную почту придёт письмо с ссылкой по
@@ -63,6 +63,15 @@ export default function ForgotPasswordForm() {
         >
           Отправить
         </Button>
+        {/* Ссылки снизу */}
+        <div className="flex justify-between mt-4 text-sm text-[#0A8791]">
+          <Link to={"/login"} className="hover:underline">
+            Вход
+          </Link>
+          <Link to={"/register"} className="hover:underline">
+            Зарегистрироваться
+          </Link>
+        </div>
       </form>
     </div>
   );

@@ -4,6 +4,7 @@ import Button from "@components/ui/Button/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { register as registerUser, clearMessages } from "./autSlice";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function RegisterForm() {
   const dispatch = useDispatch();
@@ -57,7 +58,7 @@ export default function RegisterForm() {
   }, [dispatch]);
 
   return (
-    <div className="pt-35 px-10">
+    <div className="pt-20 px-10">
       <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto">
         <h2 className="text-4xl font-bold mb-10 text-center">Регистрация</h2>
 
@@ -191,6 +192,12 @@ export default function RegisterForm() {
         >
           {loading ? "Загрузка..." : "Зарегистрироваться"}
         </Button>
+        {/* Ссылки снизу */}
+        <div className="flex justify-between mt-4 text-sm text-[#0A8791]">
+          <Link to={"/login"} className="hover:underline">
+            Вход
+          </Link>
+        </div>
       </form>
     </div>
   );

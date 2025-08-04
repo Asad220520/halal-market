@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Mail, LockKeyhole, Eye, EyeOff } from "lucide-react";
 import Button from "@components/ui/Button/Button";
 import { login, clearMessages } from "../../features/auth/autSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ export default function LoginForm() {
   }, [user, navigate]);
 
   return (
-    <div className="pt-35 px-10">
+    <div className="pt-20 px-10">
       <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto">
         <h2 className="text-4xl font-bold mb-10 text-center">
           Войти в систему
@@ -130,6 +130,15 @@ export default function LoginForm() {
         >
           {loading ? "Загрузка..." : "Войти"}
         </Button>
+        {/* Ссылки снизу */}
+        <div className="flex justify-between mt-4 text-sm text-[#0A8791]">
+          <Link to={"/forgot-password"} className="hover:underline">
+            Забыли пароль?
+          </Link>
+          <Link to={"/register"} className="hover:underline">
+            Зарегистрироваться
+          </Link>
+        </div>
       </form>
     </div>
   );
